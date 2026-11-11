@@ -127,15 +127,16 @@ section{padding-block:80px}
 /* 연혁 */
 #history .eyebrow{color:var(--butter)}
 .timeline{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-.timeline li{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding-block:18px;gap:0 16px}
+.timeline > li{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding-block:18px;gap:0 16px}
 .timeline .y{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:10px}
 .timeline .y::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c);flex:none;transform:translateY(-1px)}
-.timeline li:nth-child(4n+1){--c:var(--sky)}
-.timeline li:nth-child(4n+2){--c:var(--lime)}
-.timeline li:nth-child(4n+3){--c:var(--butter)}
-.timeline li:nth-child(4n+4){--c:var(--coral)}
+.timeline > li:nth-child(4n+1){--c:var(--sky)}
+.timeline > li:nth-child(4n+2){--c:var(--lime)}
+.timeline > li:nth-child(4n+3){--c:var(--butter)}
+.timeline > li:nth-child(4n+4){--c:var(--coral)}
 .timeline ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;min-width:0}
 .timeline ul li + li::before{content:"·";margin:0 10px;color:var(--muted);font-weight:400}
+@media (min-width:621px){.timeline ul li{white-space:nowrap}}
 .timeline .key{font-weight:700}
 
 /* 소개 */
@@ -185,7 +186,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   footer dl{grid-template-columns:1fr}
 }
 @media (max-width:520px){
-  .timeline li{grid-template-columns:76px 1fr}
+  .timeline > li{grid-template-columns:76px 1fr}
   form{grid-template-columns:1fr;padding:20px}
   .spools{grid-template-columns:repeat(2,1fr)}
   .heroCard .logo{font-size:36px}
