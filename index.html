@@ -134,7 +134,8 @@ section{padding-block:80px}
 .timeline li:nth-child(4n+2){--c:var(--lime)}
 .timeline li:nth-child(4n+3){--c:var(--butter)}
 .timeline li:nth-child(4n+4){--c:var(--coral)}
-.timeline ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;min-width:0}
+.timeline ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;min-width:0}
+.timeline ul li + li::before{content:"·";margin:0 10px;color:var(--muted);font-weight:400}
 .timeline .key{font-weight:700}
 
 /* 소개 */
