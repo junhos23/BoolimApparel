@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="(주)부림어패럴 - 의류 임가공·수출입 전문 기업">
+<title>부림어패럴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+@font-face{font-family:"Pretendard";src:url("fonts/PretendardVariable.woff2") format("woff2-variations"),url("fonts/PretendardVariable.woff2") format("woff2");font-weight:45 920;font-display:swap}
+/* Layout: 로고의 네 가지 색(B 하늘·L 라임·A 버터·R 코랄)을 파스텔로 풀어 섹션마다 한 색씩. 회사 정보는 맨 아래 한곳에. */
+:root{
+  --sky:#46a2e1; --lime:#9ab52c; --butter:#e3b320; --coral:#ef6f55;
+  --sky-p:#e3f1fb; --lime-p:#eef5d6; --butter-p:#fdf3d2; --coral-p:#fde5de;
+  --bg:#ffffff; --surface:#ffffff; --ink:#2b3140; --muted:#6b7385; --line:#e4e8ef;
+  --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --round:"Fredoka","Pretendard",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --sky:#7cc0ee;--lime:#c3d96a;--butter:#f2cf5c;--coral:#f59a86;
+  --sky-p:#1d2c3a;--lime-p:#252c1c;--butter-p:#30291a;--coral-p:#33221f;
+  --bg:#15181f;--surface:#1c2029;--ink:#eceef3;--muted:#a3aabb;--line:#2e3442;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sky:#7cc0ee;--lime:#c3d96a;--butter:#f2cf5c;--coral:#f59a86;
+  --sky-p:#1d2c3a;--lime-p:#252c1c;--butter-p:#30291a;--coral-p:#33221f;
+  --bg:#15181f;--surface:#1c2029;--ink:#eceef3;--muted:#a3aabb;--line:#2e3442;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3;letter-spacing:-.03em}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+
+/* 로고 워드마크 재현: B·L·A·R만 컬러 */
+.logo{display:inline-flex;flex-direction:column;line-height:.95;font-family:var(--round);font-weight:600;color:var(--ink)}
+.logo .l1{letter-spacing:.02em}
+.logo .l2{font-size:.78em;letter-spacing:.04em;padding-left:1.15em}
+.logo .ko{font-family:var(--sans);font-weight:700;font-size:.42em;letter-spacing:.02em;padding-left:2.9em;margin-top:.35em}
+.c-sky{color:var(--sky)}.c-lime{color:var(--lime)}.c-butter{color:var(--butter)}.c-coral{color:var(--coral)}
+
+/* 헤더: 원본 로고 이미지 */
+/* 로고 원본이 흰 바탕이라 헤더는 테마와 상관없이 항상 흰색 */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#fff}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:#fff;color:#2b3140;border-bottom:1px solid #e4e8ef}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:8px}
+.logo-img{display:block;line-height:0}
+.logo-img img{width:145px;height:50px;display:block}
+nav{display:flex;gap:6px;font-size:15px;font-weight:500}
+nav a{text-decoration:none;padding:6px 12px;border-radius:999px}
+nav a:hover{background:#e3f1fb}
+
+/* 히어로 */
+.hero{background:linear-gradient(120deg,var(--sky-p) 0%,var(--lime-p) 38%,var(--butter-p) 68%,var(--coral-p) 100%)}
+.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero .eyebrow{color:var(--sky)}
+.hero h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;margin-top:16px}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--butter-p) 62%);padding:0 .08em}
+.hero p.lead{margin-top:22px;max-width:34em;font-size:17px;color:var(--muted)}
+.cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}}
+
+.heroCard{background:var(--surface);border-radius:28px;padding:28px;box-shadow:0 18px 40px -24px rgba(43,49,64,.35)}
+.heroCard .logo{font-size:44px}
+.spools{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.spool{border-radius:14px;padding:12px 10px 10px;text-align:center;font-size:12px;color:var(--muted)}
+.spool b{display:block;font-size:13px;color:var(--ink);margin-top:6px}
+.spool i{display:block;height:34px;border-radius:8px;margin:0 auto;width:70%;background:repeating-linear-gradient(0deg,var(--c) 0 3px,color-mix(in srgb,var(--c) 70%,#fff) 3px 5px)}
+.spool.s1{background:var(--sky-p);--c:var(--sky)}
+.spool.s2{background:var(--lime-p);--c:var(--lime)}
+.spool.s3{background:var(--butter-p);--c:var(--butter)}
+.spool.s4{background:var(--coral-p);--c:var(--coral)}
+
+/* 숫자 */
+.figures .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-block:28px}
+.fig{border-radius:20px;padding:22px 22px 18px}
+.fig b{display:block;font-size:clamp(26px,3vw,36px);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.fig small{color:var(--muted);font-size:14px}
+.fig:nth-child(1){background:var(--sky-p)}.fig:nth-child(1) b{color:var(--sky)}
+.fig:nth-child(2){background:var(--lime-p)}.fig:nth-child(2) b{color:var(--lime)}
+.fig:nth-child(3){background:var(--butter-p)}.fig:nth-child(3) b{color:var(--butter)}
+.fig:nth-child(4){background:var(--coral-p)}.fig:nth-child(4) b{color:var(--coral)}
+
+section{padding-block:80px}
+.sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:end;margin-bottom:40px}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-top:8px}
+.sec-head p{color:var(--muted);max-width:36em}
+
+/* 사업영역 */
+.biz{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.biz article{border-radius:24px;padding:28px 26px;min-width:0;position:relative}
+.biz article::after{content:"";position:absolute;inset:8px;border:1.5px dashed color-mix(in srgb,var(--c) 45%,transparent);border-radius:18px;pointer-events:none}
+.biz article:nth-child(1){background:var(--sky-p);--c:var(--sky)}
+.biz article:nth-child(2){background:var(--lime-p);--c:var(--lime)}
+.biz article:nth-child(3){background:var(--coral-p);--c:var(--coral)}
+.biz .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--c);background:var(--surface);padding:4px 10px;border-radius:999px}
+.biz h3{font-size:22px;margin:14px 0 10px}
+.biz p{font-size:15px}
+.biz ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+
+/* 공정 */
+.process{background:var(--surface);border-block:1px solid var(--line)}
+.process .eyebrow{color:var(--lime)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);position:relative}
+.steps::before{content:"";position:absolute;left:20px;right:20px;top:21px;border-top:2px dashed var(--line)}
+.steps li{position:relative;padding-right:12px;min-width:0}
+.steps .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;position:relative;color:var(--ink)}
+.steps li:nth-child(4n+1) .n{background:var(--sky-p);box-shadow:inset 0 0 0 2px var(--sky)}
+.steps li:nth-child(4n+2) .n{background:var(--lime-p);box-shadow:inset 0 0 0 2px var(--lime)}
+.steps li:nth-child(4n+3) .n{background:var(--butter-p);box-shadow:inset 0 0 0 2px var(--butter)}
+.steps li:nth-child(4n+4) .n{background:var(--coral-p);box-shadow:inset 0 0 0 2px var(--coral)}
+.steps h3{font-size:17px;font-weight:700;margin-top:14px}
+.steps p{font-size:14px;color:var(--muted);margin-top:4px}
+
+/* 연혁 */
+#history .eyebrow{color:var(--butter)}
+.timeline{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.timeline li{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding-block:18px;gap:0 16px}
+.timeline .y{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:10px}
+.timeline .y::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c);flex:none;transform:translateY(-1px)}
+.timeline li:nth-child(4n+1){--c:var(--sky)}
+.timeline li:nth-child(4n+2){--c:var(--lime)}
+.timeline li:nth-child(4n+3){--c:var(--butter)}
+.timeline li:nth-child(4n+4){--c:var(--coral)}
+.timeline ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;min-width:0}
+.timeline .key{font-weight:700}
+
+/* 소개 */
+#about .eyebrow{color:var(--coral)}
+.about{max-width:760px}
+.about h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin:8px 0 24px}
+.about p{color:var(--muted)}
+.about p + p{margin-top:16px}
+
+/* 문의 */
+.contact{background:linear-gradient(120deg,var(--coral-p),var(--butter-p))}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.contact .eyebrow{color:var(--coral)}
+.contact h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-top:8px}
+.contact p{color:var(--muted);margin-top:16px;max-width:30em}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--surface);padding:26px;border-radius:24px}
+form .full{grid-column:1/-1}
+label.f{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:15px;padding:11px 14px;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:12px;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px var(--sky-p)}
+.formmsg{grid-column:1/-1;font-size:14px;color:var(--coral);min-height:1.5em}
+
+/* 하단 회사 정보 */
+footer{background:var(--surface);border-top:1px solid var(--line);padding-block:48px 32px}
+footer .grid{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
+footer .logo{font-size:30px}
+footer dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px;margin:0;font-size:14.5px}
+footer dl div{display:grid;grid-template-columns:76px 1fr;gap:12px;min-width:0}
+footer dt{color:var(--muted)}
+footer dd{margin:0;font-weight:500;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media (max-width:900px){
+  .hero .wrap,.sec-head,.contact .wrap,footer .grid{grid-template-columns:1fr}
+  .biz{grid-template-columns:1fr}
+  .figures .wrap{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr;gap:20px}
+  .steps::before{left:21px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed var(--line)}
+  .steps li{display:grid;grid-template-columns:44px 1fr;gap:0 16px}
+  .steps h3{margin-top:8px}
+  .steps p{grid-column:2}
+  nav{display:none}
+  section{padding-block:56px}
+}
+@media (max-width:620px){
+  footer dl{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .timeline li{grid-template-columns:76px 1fr}
+  form{grid-template-columns:1fr;padding:20px}
+  .spools{grid-template-columns:repeat(2,1fr)}
+  .heroCard .logo{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo-img" href="#top"><img src="img/logo.gif" width="145" height="50" alt="BOOLIM APPAREL (주)부림어패럴"></a>
+    <nav aria-label="주요 메뉴">
+      <a href="#business">사업영역</a>
+      <a href="#process">생산공정</a>
+      <a href="#history">회사연혁</a>
+      <a href="#contact">생산문의</a>
+      <a href="#company">회사정보</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Since 2005 · Apparel OEM &amp; Trading</p>
+      <h1>브랜드의 디자인을<br><span class="hl">한 벌의 옷</span>으로 완성합니다</h1>
+      <p class="lead">부림어패럴은 국내 패션 브랜드의 의류를 기획 단계부터 출고까지 책임지는 의류 임가공·수출입 전문 기업입니다. 2005년 첫 브랜드 생산을 시작으로 캐주얼, 스포츠, 아웃도어, 여성복 브랜드와 함께해 왔습니다.</p>
+      <div class="cta">
+        <a class="btn solid" href="#contact">생산 문의하기</a>
+        <a class="btn ghost" href="#history">회사 연혁 보기</a>
+      </div>
+    </div>
+    <aside class="heroCard" aria-label="부림어패럴이 맡는 일">
+      <span class="logo" role="img" aria-label="BOOLIM APPAREL (주)부림어패럴">
+        <span class="l1"><span class="c-sky">B</span>OO<span class="c-lime">L</span>IM</span>
+        <span class="l2"><span class="c-butter">A</span>PPA<span class="c-coral">R</span>EL</span>
+        <span class="ko">(주)부림어패럴</span>
+      </span>
+      <div class="spools">
+        <div class="spool s1"><i></i><b>기획</b>샘플·패턴</div>
+        <div class="spool s2"><i></i><b>소싱</b>원단·부자재</div>
+        <div class="spool s3"><i></i><b>생산</b>재단·봉제</div>
+        <div class="spool s4"><i></i><b>납품</b>검품·출고</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="figures">
+  <div class="wrap">
+    <div class="fig"><b>2005</b><small>첫 브랜드 의류 생산</small></div>
+    <div class="fig"><b>20년+</b><small>의류 생산 경력</small></div>
+    <div class="fig"><b>10+</b><small>함께한 패션 브랜드</small></div>
+    <div class="fig"><b>115억</b><small>2025년 매출액</small></div>
+  </div>
+</div>
+
+<section id="business">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow" style="color:var(--sky)">Business</p><h2>사업영역</h2></div>
+      <p>브랜드가 디자인에 집중할 수 있도록, 원단 수배부터 봉제·검품·납품까지 생산의 전 과정을 대신 관리합니다.</p>
+    </div>
+    <div class="biz">
+      <article>
+        <span class="tag">OEM / CMT</span>
+        <h3>의류 임가공</h3>
+        <p>브랜드의 작업지시서와 샘플을 기준으로 재단·봉제·완성까지 생산을 수행합니다.</p>
+        <ul><li>티셔츠·맨투맨·후디 등 컷앤소</li><li>아우터·점퍼·팬츠</li><li>소량 리오더 대응</li></ul>
+      </article>
+      <article>
+        <span class="tag">Import / Export</span>
+        <h3>의류 수출입</h3>
+        <p>완제품과 원단·부자재의 수출입 업무를 맡아 통관과 물류 일정을 관리합니다.</p>
+        <ul><li>완제품 수입 및 납품</li><li>원단·부자재 소싱</li><li>납기 맞춤 선적 관리</li></ul>
+      </article>
+      <article>
+        <span class="tag">Quality &amp; Delivery</span>
+        <h3>품질·납기 관리</h3>
+        <p>협력 공장의 생산 일정과 품질을 직접 점검해, 약속한 수준과 날짜에 맞춰 납품합니다.</p>
+        <ul><li>협력 공장 선정·관리</li><li>공정별 QC 및 검품</li><li>단가·물량 조율</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Process</p><h2>생산공정</h2></div>
+      <p>주문 한 건이 매장에 걸리기까지 거치는 일곱 단계입니다. 각 단계마다 담당자가 진행 상황을 브랜드와 공유합니다.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><h3>상담·견적</h3><p>디자인, 수량, 납기 확인</p></li>
+      <li><span class="n">2</span><h3>샘플</h3><p>패턴 제작과 샘플 컨펌</p></li>
+      <li><span class="n">3</span><h3>원부자재</h3><p>원단·부자재 수배, 물성 확인</p></li>
+      <li><span class="n">4</span><h3>재단</h3><p>마카 작업과 요척 관리</p></li>
+      <li><span class="n">5</span><h3>봉제</h3><p>라인 생산, 중간 검사</p></li>
+      <li><span class="n">6</span><h3>검품</h3><p>치수·봉제·이염 전수 검사</p></li>
+      <li><span class="n">7</span><h3>포장·출고</h3><p>브랜드 물류센터 납품</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">History</p><h2>회사 연혁</h2></div>
+      <p>2005년 첫 의류 생산을 시작한 뒤 법인을 세우고, 여러 패션 브랜드와 협력하며 성장해 왔습니다.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="y">2005</span><ul><li class="key">부림 의류 생산 시작</li><li>리얼컴퍼니(ASK, DOHC) 의류 생산</li></ul></li>
+      <li><span class="y">2007</span><ul><li class="key">(주)부림어패럴 법인 설립 (10월 16일)</li></ul></li>
+      <li><span class="y">2008</span><ul><li>보끄레머천다이징(OLIVE DES OLIVE) 의류 생산</li><li>F&amp;F(SISLEY, MLB) 의류 생산</li></ul></li>
+      <li><span class="y">2009</span><ul><li>더휴컴퍼니(UGIZ) 의류 생산</li></ul></li>
+      <li><span class="y">2011</span><ul><li>엠케이트렌드(NBA) 의류 생산</li></ul></li>
+      <li><span class="y">2013</span><ul><li class="key">본사 사옥 신축 이전</li><li>제이엔지코리아(JEEP, SIERO) 의류 생산</li></ul></li>
+      <li><span class="y">2016</span><ul><li>화승(MERRELL) 의류 생산</li></ul></li>
+      <li><span class="y">2017</span><ul><li>LF(JILLSTUART) 의류 생산</li></ul></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="about">
+      <p class="eyebrow">About</p>
+      <h2>약속한 품질을, 약속한 날에.</h2>
+      <p>의류 생산에서 브랜드가 가장 크게 신경 쓰는 것은 품질과 납기입니다. 부림어패럴은 작은 조직으로 움직이는 대신, 한 건의 주문을 처음부터 끝까지 같은 담당자가 맡아 빠르게 판단하고 책임지는 방식으로 일해 왔습니다.</p>
+      <p>여러 브랜드의 생산을 연이어 맡으며 쌓은 협력 공장 네트워크를 바탕으로, 시즌 물량부터 급한 리오더까지 브랜드의 일정에 맞춰 대응합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>생산 문의</h2>
+      <p>디자인 시안이나 작업지시서, 예상 수량과 납기를 알려주시면 담당자가 검토 후 견적과 일정을 회신드립니다. 연락처는 페이지 하단 회사 정보에서 확인하실 수 있습니다.</p>
+    </div>
+    <form id="inquiry" novalidate>
+      <label class="f" for="f-company">회사·브랜드명<input id="f-company" name="company" placeholder="예: 브랜드명"></label>
+      <label class="f" for="f-name">담당자<input id="f-name" name="name" placeholder="성함"></label>
+      <label class="f" for="f-item">품목
+        <select id="f-item" name="item">
+          <option>티셔츠·맨투맨·후디</option><option>아우터·점퍼</option><option>팬츠·스커트</option><option>원피스·블라우스</option><option>기타</option>
+        </select>
+      </label>
+      <label class="f" for="f-qty">예상 수량<input id="f-qty" name="qty" inputmode="numeric" placeholder="예: 1,000 장"></label>
+      <label class="f full" for="f-msg">문의 내용<textarea id="f-msg" name="msg" placeholder="원단, 희망 납기 등"></textarea></label>
+      <div class="full"><button class="btn solid" type="submit">문의 접수</button></div>
+      <p class="formmsg" id="formmsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer id="company">
+  <div class="wrap">
+    <div class="grid">
+      <span class="logo" role="img" aria-label="BOOLIM APPAREL">
+        <span class="l1"><span class="c-sky">B</span>OO<span class="c-lime">L</span>IM</span>
+        <span class="l2"><span class="c-butter">A</span>PPA<span class="c-coral">R</span>EL</span>
+      </span>
+      <dl aria-label="회사 정보">
+        <div><dt>상호</dt><dd>(주)부림어패럴</dd></div>
+        <div><dt>대표이사</dt><dd>오규호</dd></div>
+        <div><dt>설립일</dt><dd>2007년 10월 16일</dd></div>
+        <div><dt>기업형태</dt><dd>중소기업 · 법인</dd></div>
+        <div><dt>주요사업</dt><dd>의류 임가공, 수출입</dd></div>
+        <div><dt>주소</dt><dd>경기도 남양주시 다산순환로 20</dd></div>
+        <div><dt>전화</dt><dd>000-0000-0000</dd></div>
+        <div><dt>이메일</dt><dd>contact@example.com</dd></div>
+      </dl>
+    </div>
+    <div class="copy"><span>© 2026 BOOLIM APPAREL. All rights reserved.</span><span>사업자 정보는 회사 확인 후 게시</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('inquiry').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var msg = document.getElementById('formmsg');
+  var c = document.getElementById('f-company').value.trim();
+  var n = document.getElementById('f-name').value.trim();
+  if (!c || !n) { msg.textContent = '회사·브랜드명과 담당자를 입력해 주세요.'; return; }
+  msg.textContent = '시안 페이지라 실제로 전송되지는 않습니다. 정식 오픈 시 접수 기능이 연결됩니다.';
+});
+</script>
+</body>
+</html>
