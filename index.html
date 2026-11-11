@@ -139,12 +139,26 @@ section{padding-block:80px}
 @media (min-width:621px){.timeline ul li{white-space:nowrap}}
 .timeline .key{font-weight:700}
 
-/* 소개 */
-#about .eyebrow{color:var(--coral)}
-.about{max-width:760px}
-.about h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin:8px 0 24px}
-.about p{color:var(--muted)}
-.about p + p{margin-top:16px}
+/* 고객사 */
+.clients{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.clients li{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;min-height:96px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:18px;letter-spacing:.02em}
+.clients li small{display:block;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:4px}
+.clients li:nth-child(4n+1){border-color:color-mix(in srgb,var(--sky) 45%,var(--line))}
+.clients li:nth-child(4n+2){border-color:color-mix(in srgb,var(--lime) 45%,var(--line))}
+.clients li:nth-child(4n+3){border-color:color-mix(in srgb,var(--butter) 45%,var(--line))}
+.clients li:nth-child(4n+4){border-color:color-mix(in srgb,var(--coral) 45%,var(--line))}
+
+/* 비전 */
+.vision{background:var(--surface);border-top:1px solid var(--line)}
+.vision .eyebrow{color:var(--coral)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{border-radius:24px;padding:26px}
+.pillar .eyebrow{font-size:12px}
+.pillar h3{font-size:21px;margin:10px 0 8px}
+.pillar p{color:var(--muted);font-size:15px}
+.pillar.p1{background:var(--sky-p)}.pillar.p1 .eyebrow{color:var(--sky)}
+.pillar.p2{background:var(--lime-p)}.pillar.p2 .eyebrow{color:var(--lime)}
+.pillar.p3{background:var(--butter-p)}.pillar.p3 .eyebrow{color:var(--butter)}
 
 /* 문의 */
 .contact{background:linear-gradient(120deg,var(--coral-p),var(--butter-p))}
@@ -166,13 +180,15 @@ footer .grid{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:s
 footer .logo{font-size:30px}
 footer dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px;margin:0;font-size:14.5px}
 footer dl div{display:grid;grid-template-columns:76px 1fr;gap:12px;min-width:0}
+footer dl .wide{grid-column:1/-1}
 footer dt{color:var(--muted)}
 footer dd{margin:0;font-weight:500;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
 footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
 @media (max-width:900px){
   .hero .wrap,.sec-head,.contact .wrap,footer .grid{grid-template-columns:1fr}
-  .biz{grid-template-columns:1fr}
+  .biz,.pillars{grid-template-columns:1fr}
+  .clients{grid-template-columns:repeat(3,minmax(0,1fr))}
   .figures .wrap{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr;gap:20px}
   .steps::before{left:21px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed var(--line)}
@@ -186,7 +202,8 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   footer dl{grid-template-columns:1fr}
 }
 @media (max-width:520px){
-  .timeline > li{grid-template-columns:76px 1fr}
+  .timeline > li{grid-template-columns:84px 1fr}
+  .clients{grid-template-columns:repeat(2,minmax(0,1fr))}
   form{grid-template-columns:1fr;padding:20px}
   .spools{grid-template-columns:repeat(2,1fr)}
   .heroCard .logo{font-size:36px}
@@ -202,6 +219,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
       <a href="#business">사업영역</a>
       <a href="#process">생산공정</a>
       <a href="#history">회사연혁</a>
+      <a href="#clients">고객사</a>
       <a href="#contact">생산문의</a>
       <a href="#company">회사정보</a>
     </nav>
@@ -211,9 +229,9 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Since 2005 · Apparel OEM &amp; Trading</p>
+      <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
       <h1>브랜드의 디자인을<br><span class="hl">한 벌의 옷</span>으로 완성합니다</h1>
-      <p class="lead">부림어패럴은 국내 패션 브랜드의 의류를 기획 단계부터 출고까지 책임지는 의류 임가공·수출입 전문 기업입니다. 2005년 첫 브랜드 생산을 시작으로 캐주얼, 스포츠, 아웃도어, 여성복 브랜드와 함께해 왔습니다.</p>
+      <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔습니다.</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
         <a class="btn ghost" href="#history">회사 연혁 보기</a>
@@ -237,9 +255,9 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
 
 <div class="figures">
   <div class="wrap">
-    <div class="fig"><b>2005</b><small>첫 브랜드 의류 생산</small></div>
-    <div class="fig"><b>20년+</b><small>의류 생산 경력</small></div>
-    <div class="fig"><b>10+</b><small>함께한 패션 브랜드</small></div>
+    <div class="fig"><b>2003</b><small>부림 창립</small></div>
+    <div class="fig"><b>23년</b><small>의류 생산 경력</small></div>
+    <div class="fig"><b>20+</b><small>함께한 패션 브랜드</small></div>
     <div class="fig"><b>115억</b><small>2025년 매출액</small></div>
   </div>
 </div>
@@ -248,26 +266,26 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow" style="color:var(--sky)">Business</p><h2>사업영역</h2></div>
-      <p>브랜드가 디자인에 집중할 수 있도록, 원단 수배부터 봉제·검품·납품까지 생산의 전 과정을 대신 관리합니다.</p>
+      <p>브랜드가 디자인에 집중할 수 있도록, 샘플 개발과 원단 수배부터 봉제·검품·납품까지 생산의 전 과정을 맡습니다.</p>
     </div>
     <div class="biz">
       <article>
-        <span class="tag">OEM / CMT</span>
-        <h3>의류 임가공</h3>
-        <p>브랜드의 작업지시서와 샘플을 기준으로 재단·봉제·완성까지 생산을 수행합니다.</p>
-        <ul><li>티셔츠·맨투맨·후디 등 컷앤소</li><li>아우터·점퍼·팬츠</li><li>소량 리오더 대응</li></ul>
+        <span class="tag">Promotion / OEM</span>
+        <h3>의류 제작·생산</h3>
+        <p>브랜드의 작업지시서를 받아 원단·부자재 수배부터 재단·봉제·완성까지 생산을 진행합니다.</p>
+        <ul><li>티셔츠·맨투맨·후디 등 니트류</li><li>다운·패딩·바람막이 등 우븐 아우터</li><li>팬츠·조거·스포츠웨어</li></ul>
       </article>
       <article>
-        <span class="tag">Import / Export</span>
-        <h3>의류 수출입</h3>
-        <p>완제품과 원단·부자재의 수출입 업무를 맡아 통관과 물류 일정을 관리합니다.</p>
-        <ul><li>완제품 수입 및 납품</li><li>원단·부자재 소싱</li><li>납기 맞춤 선적 관리</li></ul>
+        <span class="tag">Sample Line</span>
+        <h3>샘플 개발</h3>
+        <p>자체 샘플 라인에서 패턴과 샘플을 만들고, 브랜드 컨펌을 거쳐 본생산으로 이어 갑니다.</p>
+        <ul><li>패턴·샘플 제작</li><li>원단·부자재 물성 테스트</li><li>소재 변경·수정 샘플 대응</li></ul>
       </article>
       <article>
         <span class="tag">Quality &amp; Delivery</span>
         <h3>품질·납기 관리</h3>
-        <p>협력 공장의 생산 일정과 품질을 직접 점검해, 약속한 수준과 날짜에 맞춰 납품합니다.</p>
-        <ul><li>협력 공장 선정·관리</li><li>공정별 QC 및 검품</li><li>단가·물량 조율</li></ul>
+        <p>원단 검사부터 출고 전 최종 검품까지 단계마다 품질을 확인해, 약속한 날짜에 납품합니다.</p>
+        <ul><li>원단 검사·수축률 테스트</li><li>인라인·엔드라인 검사, 바늘 검침</li><li>AQL 기준 최종 검품</li></ul>
       </article>
     </div>
   </div>
@@ -295,28 +313,46 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">History</p><h2>회사 연혁</h2></div>
-      <p>2005년 첫 의류 생산을 시작한 뒤 법인을 세우고, 여러 패션 브랜드와 협력하며 성장해 왔습니다.</p>
+      <p>2003년 창립해 2007년 법인으로 전환했고, 국내 주요 패션 브랜드와 협력하며 성장해 왔습니다.</p>
     </div>
     <ol class="timeline">
-      <li><span class="y">2005</span><ul><li class="key">부림 의류 생산 시작</li><li>리얼컴퍼니(ASK, DOHC) 의류 생산</li></ul></li>
-      <li><span class="y">2007</span><ul><li class="key">(주)부림어패럴 법인 설립 (10월 16일)</li></ul></li>
-      <li><span class="y">2008</span><ul><li>보끄레머천다이징(OLIVE DES OLIVE) 의류 생산</li><li>F&amp;F(SISLEY, MLB) 의류 생산</li></ul></li>
-      <li><span class="y">2009</span><ul><li>더휴컴퍼니(UGIZ) 의류 생산</li></ul></li>
-      <li><span class="y">2011</span><ul><li>엠케이트렌드(NBA) 의류 생산</li></ul></li>
-      <li><span class="y">2013</span><ul><li class="key">본사 사옥 신축 이전</li><li>제이엔지코리아(JEEP, SIERO) 의류 생산</li></ul></li>
-      <li><span class="y">2016</span><ul><li>화승(MERRELL) 의류 생산</li></ul></li>
-      <li><span class="y">2017</span><ul><li>LF(JILLSTUART) 의류 생산</li></ul></li>
+      <li><span class="y">2003.01</span><ul><li class="key">부림 창립</li><li>네티션닷컴(A6, ENC) 의류 생산</li></ul></li>
+      <li><span class="y">2004.03</span><ul><li>리얼컴퍼니(ASK, DOHC) 의류 생산</li></ul></li>
+      <li><span class="y">2007.10</span><ul><li class="key">(주)부림어패럴 법인 전환</li></ul></li>
+      <li><span class="y">2008.03</span><ul><li>F&amp;F(SISLEY, MLB, MLB KIDS) 의류 생산</li></ul></li>
+      <li><span class="y">2011.04</span><ul><li>엠케이트렌드(NBA)</li><li>제이엔지인터내셔날(JEEP, SIERO)</li></ul></li>
+      <li><span class="y">2013.07</span><ul><li class="key">본사 사옥 신축 (구리)</li></ul></li>
+      <li><span class="y">2018.01</span><ul><li>신세계인터내셔날</li><li>하이드어웨이(LIFE WORK)</li></ul></li>
+      <li><span class="y">2020.03</span><ul><li>비케이브(LEE, WRANGLER)</li><li>원더플레이스(OUTDOOR PRODUCTS)</li></ul></li>
+      <li><span class="y">2022.06</span><ul><li class="key">사옥 이전 (남양주 현대프리미어캠퍼스)</li></ul></li>
+      <li><span class="y">2024.07</span><ul><li>브랜드유니버스(SPYDER) 외</li></ul></li>
     </ol>
   </div>
 </section>
 
-<section id="about" style="padding-top:0">
+<section id="clients" style="padding-top:0">
   <div class="wrap">
-    <div class="about">
-      <p class="eyebrow">About</p>
-      <h2>약속한 품질을, 약속한 날에.</h2>
-      <p>의류 생산에서 브랜드가 가장 크게 신경 쓰는 것은 품질과 납기입니다. 부림어패럴은 작은 조직으로 움직이는 대신, 한 건의 주문을 처음부터 끝까지 같은 담당자가 맡아 빠르게 판단하고 책임지는 방식으로 일해 왔습니다.</p>
-      <p>여러 브랜드의 생산을 연이어 맡으며 쌓은 협력 공장 네트워크를 바탕으로, 시즌 물량부터 급한 리오더까지 브랜드의 일정에 맞춰 대응합니다.</p>
+    <div class="sec-head">
+      <div><p class="eyebrow" style="color:var(--sky)">Clients</p><h2>주요 고객사</h2></div>
+      <p>부림어패럴과 함께하고 있는 국내 패션 기업과 브랜드입니다.</p>
+    </div>
+    <ul class="clients">
+      <li>SPYDER</li><li>Ames</li><li>LifeWork</li><li>WONDERPLACE<small>OUTDOOR PRODUCTS</small></li><li>B.CAVE<small>Lee · Wrangler · Wacky Willy</small></li>
+      <li>MLB</li><li>NBA</li><li>LF</li><li>VIVIEN</li><li>쌍방울</li>
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="vision">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Vision</p><h2>약속한 품질을, 약속한 날에.</h2></div>
+      <p>부림어패럴은 현재에 안주하지 않고 진보된 기술력으로 고객을 만족시키기 위해 노력합니다. 기술력과 품질만큼은 높은 자부심을 가지고, 더 큰 고객 만족을 위해 신기술 개발을 이어 가겠습니다.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar p1"><span class="eyebrow">Best Quality</span><h3>최고의 품질</h3><p>제품 분야별로 퀄리티를 높이기 위해 공정마다 검사하고 기록합니다.</p></div>
+      <div class="pillar p2"><span class="eyebrow">Professional Management</span><h3>전문적인 관리</h3><p>영업, 경영지원, 샘플 라인이 한 팀으로 움직여 주문을 끝까지 책임집니다.</p></div>
+      <div class="pillar p3"><span class="eyebrow">New Material &amp; Tech</span><h3>신소재·신기술 개발</h3><p>새로운 소재와 생산 기술을 꾸준히 연구해 더 다양한 의류를 만듭니다.</p></div>
     </div>
   </div>
 </section>
@@ -354,15 +390,15 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
       <dl aria-label="회사 정보">
         <div><dt>상호</dt><dd>(주)부림어패럴</dd></div>
         <div><dt>대표이사</dt><dd>오규호</dd></div>
-        <div><dt>설립일</dt><dd>2007년 10월 16일</dd></div>
-        <div><dt>기업형태</dt><dd>중소기업 · 법인</dd></div>
-        <div><dt>주요사업</dt><dd>의류 임가공, 수출입</dd></div>
-        <div><dt>주소</dt><dd>경기도 남양주시 다산순환로 20</dd></div>
-        <div><dt>전화</dt><dd>000-0000-0000</dd></div>
-        <div><dt>이메일</dt><dd>contact@example.com</dd></div>
+        <div><dt>창립</dt><dd>2003년 1월 (법인 전환 2007년 10월)</dd></div>
+        <div><dt>사업분야</dt><dd>의류 제조 · 프로모션</dd></div>
+        <div class="wide"><dt>주소</dt><dd>경기도 남양주시 다산순환로 20, 현대프리미어캠퍼스 B동 536호·1007호·1008호</dd></div>
+        <div><dt>전화</dt><dd>031-553-5772~4</dd></div>
+        <div><dt>팩스</dt><dd>031-563-7801</dd></div>
+        <div><dt>이메일</dt><dd>oh9595@naver.com</dd></div>
       </dl>
     </div>
-    <div class="copy"><span>© 2026 BOOLIM APPAREL. All rights reserved.</span><span>사업자 정보는 회사 확인 후 게시</span></div>
+    <div class="copy"><span>© 2026 BOOLIM APPAREL. All rights reserved.</span></div>
   </div>
 </footer>
 
