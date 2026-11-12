@@ -110,19 +110,41 @@ section{padding-block:80px}
 .biz p{font-size:15px}
 .biz ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
 
-/* 공정 */
+/* 해외 사업장 */
+#global .eyebrow{color:var(--lime)}
+.sites{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.site{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:24px 24px 22px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.site .head{display:flex;align-items:center;gap:12px}
+.site .cc{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.04em;background:var(--p);color:var(--c)}
+.site h3{font-size:20px}
+.site .city{font-size:13px;color:var(--muted)}
+.site .stats{display:flex;flex-wrap:wrap;gap:6px}
+.site .stats span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--p)}
+.site p{font-size:14.5px;color:var(--muted)}
+.site.cn{--c:var(--coral);--p:var(--coral-p)}
+.site.vn{--c:var(--lime);--p:var(--lime-p)}
+.site.bd{--c:var(--sky);--p:var(--sky-p)}
+.fabric{margin-top:18px;border:1.5px dashed var(--line);border-radius:18px;padding:14px 20px;font-size:14.5px;color:var(--muted)}
+.fabric b{color:var(--ink);margin-right:8px}
+
+/* 생산 절차 다이어그램 */
 .process{background:var(--surface);border-block:1px solid var(--line)}
-.process .eyebrow{color:var(--lime)}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);position:relative}
-.steps::before{content:"";position:absolute;left:20px;right:20px;top:21px;border-top:2px dashed var(--line)}
-.steps li{position:relative;padding-right:12px;min-width:0}
-.steps .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;position:relative;color:var(--ink)}
-.steps li:nth-child(4n+1) .n{background:var(--sky-p);box-shadow:inset 0 0 0 2px var(--sky)}
-.steps li:nth-child(4n+2) .n{background:var(--lime-p);box-shadow:inset 0 0 0 2px var(--lime)}
-.steps li:nth-child(4n+3) .n{background:var(--butter-p);box-shadow:inset 0 0 0 2px var(--butter)}
-.steps li:nth-child(4n+4) .n{background:var(--coral-p);box-shadow:inset 0 0 0 2px var(--coral)}
-.steps h3{font-size:17px;font-weight:700;margin-top:14px}
-.steps p{font-size:14px;color:var(--muted);margin-top:4px}
+.process .eyebrow{color:var(--butter)}
+.flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px 20px;align-items:stretch}
+.phase{grid-row:1;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-align:center;background:var(--p);color:var(--c)}
+.ph1{--c:var(--sky);--p:var(--sky-p);grid-column:1/3}
+.ph2{--c:var(--lime);--p:var(--lime-p);grid-column:3/6}
+.ph3{--c:var(--coral);--p:var(--coral-p);grid-column:6/8}
+.node{grid-row:2;grid-column:var(--col);position:relative;background:var(--bg);border:1.5px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:14px 14px 12px;min-width:0}
+.node.a{--c:var(--sky)}.node.b{--c:var(--lime)}.node.d{--c:var(--coral)}
+.node .num{font-size:12px;font-weight:800;color:var(--c);font-variant-numeric:tabular-nums}
+.node h3{font-size:16px;margin:4px 0 8px}
+.node ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px;color:var(--muted)}
+.node li::before{content:"✓";color:var(--c);font-weight:800;margin-right:6px}
+.node:not(.last)::after{content:"";position:absolute;right:-16px;top:30px;border-left:9px solid var(--muted);border-block:6px solid transparent}
+.branch{grid-row:3;grid-column:3/5;justify-self:center;font-size:13px;font-weight:600;padding:7px 16px;border:1.5px dashed var(--butter);background:var(--butter-p);border-radius:999px;text-align:center}
+.branch small{color:var(--muted);font-weight:500;margin-left:6px}
+.flow-note{margin-top:22px;font-size:13.5px;color:var(--muted)}
 
 /* 연혁 */
 #history .eyebrow{color:var(--butter)}
@@ -139,14 +161,11 @@ section{padding-block:80px}
 @media (min-width:621px){.timeline ul li{white-space:nowrap}}
 .timeline .key{font-weight:700}
 
-/* 고객사 */
-.clients{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.clients li{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;min-height:96px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:18px;letter-spacing:.02em}
-.clients li small{display:block;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:4px}
-.clients li:nth-child(4n+1){border-color:color-mix(in srgb,var(--sky) 45%,var(--line))}
-.clients li:nth-child(4n+2){border-color:color-mix(in srgb,var(--lime) 45%,var(--line))}
-.clients li:nth-child(4n+3){border-color:color-mix(in srgb,var(--butter) 45%,var(--line))}
-.clients li:nth-child(4n+4){border-color:color-mix(in srgb,var(--coral) 45%,var(--line))}
+/* 고객사 로고 (로고 원본이 흰 바탕이라 카드는 항상 흰색) */
+.clients{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.clients li{background:#fff;border:1.5px solid var(--line);border-radius:16px;height:92px;padding:14px;display:grid;place-items:center;min-width:0}
+.clients img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain}
+.clients img.tall{max-height:64px}
 
 /* 비전 */
 .vision{background:var(--surface);border-top:1px solid var(--line)}
@@ -154,6 +173,8 @@ section{padding-block:80px}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .pillar{border-radius:24px;padding:26px}
 .pillar .eyebrow{font-size:12px}
+.pillar .no{display:block;font-size:30px;font-weight:800;line-height:1;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.pillar.p1 .no{color:var(--sky)}.pillar.p2 .no{color:var(--lime)}.pillar.p3 .no{color:var(--butter)}
 .pillar h3{font-size:21px;margin:10px 0 8px}
 .pillar p{color:var(--muted);font-size:15px}
 .pillar.p1{background:var(--sky-p)}.pillar.p1 .eyebrow{color:var(--sky)}
@@ -183,20 +204,26 @@ footer dl div{display:grid;grid-template-columns:76px 1fr;gap:12px;min-width:0}
 footer dl .wide{grid-column:1/-1}
 footer dt{color:var(--muted)}
 footer dd{margin:0;font-weight:500;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+footer dd a{text-decoration:none}
+footer dd a:hover{text-decoration:underline}
+.maplink{display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:12px;font-weight:700;color:#03a94d;border:1.5px solid #03a94d;border-radius:999px;padding:1px 9px;white-space:nowrap}
 footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
 @media (max-width:900px){
   .hero .wrap,.sec-head,.contact .wrap,footer .grid{grid-template-columns:1fr}
   .biz,.pillars{grid-template-columns:1fr}
-  .clients{grid-template-columns:repeat(3,minmax(0,1fr))}
   .figures .wrap{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr;gap:20px}
-  .steps::before{left:21px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed var(--line)}
-  .steps li{display:grid;grid-template-columns:44px 1fr;gap:0 16px}
-  .steps h3{margin-top:8px}
-  .steps p{grid-column:2}
+  .sites{grid-template-columns:1fr}
+  .clients{grid-template-columns:repeat(4,minmax(0,1fr))}
   nav{display:none}
   section{padding-block:56px}
+}
+@media (max-width:1000px){
+  .flow{grid-template-columns:1fr;gap:18px}
+  .phase{display:none}
+  .node,.branch{grid-row:auto;grid-column:auto}
+  .node:not(.last)::after{right:auto;left:26px;top:auto;bottom:-15px;border-block:0;border-inline:6px solid transparent;border-top:9px solid var(--muted)}
+  .branch{justify-self:start;margin-left:40px}
 }
 @media (max-width:620px){
   footer dl{grid-template-columns:1fr}
@@ -217,6 +244,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
     <a class="logo-img" href="#top"><img src="img/logo.gif" width="145" height="50" alt="BOOLIM APPAREL (주)부림어패럴"></a>
     <nav aria-label="주요 메뉴">
       <a href="#business">사업영역</a>
+      <a href="#global">해외사업장</a>
       <a href="#process">생산공정</a>
       <a href="#history">회사연혁</a>
       <a href="#clients">고객사</a>
@@ -231,7 +259,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
     <div>
       <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
       <h1>브랜드의 디자인을<br><span class="hl">한 벌의 옷</span>으로 완성합니다</h1>
-      <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔습니다.</p>
+      <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 중국·베트남·방글라데시 해외 사업장으로 약속한 납기를 지킵니다.</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
         <a class="btn ghost" href="#history">회사 연혁 보기</a>
@@ -257,7 +285,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   <div class="wrap">
     <div class="fig"><b>2003</b><small>부림 창립</small></div>
     <div class="fig"><b>23년</b><small>의류 생산 경력</small></div>
-    <div class="fig"><b>20+</b><small>함께한 패션 브랜드</small></div>
+    <div class="fig"><b>3개국</b><small>해외 사업장 (중국·베트남·방글라데시)</small></div>
     <div class="fig"><b>115억</b><small>2025년 매출액</small></div>
   </div>
 </div>
@@ -284,28 +312,60 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
       <article>
         <span class="tag">Quality &amp; Delivery</span>
         <h3>품질·납기 관리</h3>
-        <p>원단 검사부터 출고 전 최종 검품까지 단계마다 품질을 확인해, 약속한 날짜에 납품합니다.</p>
+        <p>원단 검사부터 출고 전 최종 검품까지 단계마다 품질을 확인하고, 해외 사업장 생산 일정을 직접 관리해 약속한 날짜에 납품합니다.</p>
         <ul><li>원단 검사·수축률 테스트</li><li>인라인·엔드라인 검사, 바늘 검침</li><li>AQL 기준 최종 검품</li></ul>
       </article>
     </div>
   </div>
 </section>
 
+<section id="global">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Global Network</p><h2>해외 사업장</h2></div>
+      <p>중국, 베트남, 방글라데시 등 해외 사업장을 확장해 물량이 늘어도 제품 딜리버리에 차질이 없도록 준비되어 있습니다.</p>
+    </div>
+    <div class="sites">
+      <article class="site cn">
+        <div class="head"><span class="cc">CN</span><div><h3>중국</h3><span class="city">웨이하이 · 옌타이 / 2개 사업장</span></div></div>
+        <div class="stats"><span>연 133만 장+</span><span>다운 충전 설비</span><span>샘플실 운영</span></div>
+        <p>재킷, 다운·패딩 점퍼 같은 우븐 아우터와 티셔츠·팬츠 등 니트 전 품목을 생산합니다.</p>
+      </article>
+      <article class="site vn">
+        <div class="head"><span class="cc">VN</span><div><h3>베트남</h3><span class="city">호치민 / 2개 공장</span></div></div>
+        <div class="stats"><span>18개 라인</span><span>월 50만 장</span><span>자동 재단 설비</span></div>
+        <p>스커트, 재킷, 드레스, 팬츠, 슬립웨어, 티셔츠까지 폭넓은 품목을 대량 생산합니다.</p>
+      </article>
+      <article class="site bd">
+        <div class="head"><span class="cc">BD</span><div><h3>방글라데시</h3><span class="city">니트 5 · 우븐 5 라인</span></div></div>
+        <div class="stats"><span>인력 910명</span><span>월 25만 장 (티셔츠 기준)</span><span>2026년 말 증설</span></div>
+        <p>티셔츠·조거·집업 재킷과 바람막이, 다운 재킷을 생산하며, 2026년 말 신규 동 완공으로 봉제 라인을 늘립니다.</p>
+      </article>
+    </div>
+    <p class="fabric"><b>원단 생산처</b>중국·베트남·국내 편직·염색 협력사와 원단을 개발하고 공급받아 원부자재 수급을 안정적으로 관리합니다.</p>
+  </div>
+</section>
+
 <section class="process" id="process">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Process</p><h2>생산공정</h2></div>
-      <p>주문 한 건이 매장에 걸리기까지 거치는 일곱 단계입니다. 각 단계마다 담당자가 진행 상황을 브랜드와 공유합니다.</p>
+      <div><p class="eyebrow">Production Process</p><h2>생산 절차</h2></div>
+      <p>원자재 입고부터 출고까지 모든 단계에 검사 항목을 두고, 결과를 기록해 브랜드와 공유합니다.</p>
     </div>
-    <ol class="steps">
-      <li><span class="n">1</span><h3>상담·견적</h3><p>디자인, 수량, 납기 확인</p></li>
-      <li><span class="n">2</span><h3>샘플</h3><p>패턴 제작과 샘플 컨펌</p></li>
-      <li><span class="n">3</span><h3>원부자재</h3><p>원단·부자재 수배, 물성 확인</p></li>
-      <li><span class="n">4</span><h3>재단</h3><p>마카 작업과 요척 관리</p></li>
-      <li><span class="n">5</span><h3>봉제</h3><p>라인 생산, 중간 검사</p></li>
-      <li><span class="n">6</span><h3>검품</h3><p>치수·봉제·이염 전수 검사</p></li>
-      <li><span class="n">7</span><h3>포장·출고</h3><p>브랜드 물류센터 납품</p></li>
-    </ol>
+    <div class="flow">
+      <div class="phase ph1">준비 · 입고</div>
+      <div class="phase ph2">생산</div>
+      <div class="phase ph3">검품 · 출고</div>
+      <div class="node a" style="--col:1"><span class="num">01</span><h3>주문·샘플 확정</h3><ul><li>작업지시서 검토</li><li>샘플·패턴 컨펌</li></ul></div>
+      <div class="node a" style="--col:2"><span class="num">02</span><h3>원부자재 검사</h3><ul><li>원단 4점 검사</li><li>수축률·중량·색상</li><li>부자재 전수 확인</li></ul></div>
+      <div class="node b" style="--col:3"><span class="num">03</span><h3>재단</h3><ul><li>원단 24시간 휴지</li><li>마카·연단 확인</li><li>재단물 검사</li></ul></div>
+      <div class="branch">자수 · 프린트<small>필요 시 · 10~100% 검사</small></div>
+      <div class="node b" style="--col:4"><span class="num">04</span><h3>봉제</h3><ul><li>인라인 검사</li><li>엔드라인 검사</li><li>스티치·땀수 점검</li></ul></div>
+      <div class="node b" style="--col:5"><span class="num">05</span><h3>마무리</h3><ul><li>다림질</li><li>치수 측정</li><li>바늘 검침</li></ul></div>
+      <div class="node d" style="--col:6"><span class="num">06</span><h3>최종 검품</h3><ul><li>공장 QA 검사</li><li>AQL 기준 판정</li><li>바이어 QA</li></ul></div>
+      <div class="node d last" style="--col:7"><span class="num">07</span><h3>포장·출고</h3><ul><li>포장 정확도 확인</li><li>선적·납품</li></ul></div>
+    </div>
+    <p class="flow-note">각 단계의 검사 결과는 보고서로 남겨 수량·불량·납기를 추적합니다.</p>
   </div>
 </section>
 
@@ -337,8 +397,20 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
       <p>부림어패럴과 함께하고 있는 국내 패션 기업과 브랜드입니다.</p>
     </div>
     <ul class="clients">
-      <li>SPYDER</li><li>Ames</li><li>LifeWork</li><li>WONDERPLACE<small>OUTDOOR PRODUCTS</small></li><li>B.CAVE<small>Lee · Wrangler · Wacky Willy</small></li>
-      <li>MLB</li><li>NBA</li><li>LF</li><li>VIVIEN</li><li>쌍방울</li>
+      <li><img src="img/clients/spyder.png" alt="SPYDER" class="tall" loading="lazy"></li>
+      <li><img src="img/clients/ames.png" alt="Ames" loading="lazy"></li>
+      <li><img src="img/clients/lifework.png" alt="LifeWork HIDEAWAY" loading="lazy"></li>
+      <li><img src="img/clients/wonderplace.png" alt="WONDERPLACE" loading="lazy"></li>
+      <li><img src="img/clients/outdoor-products.png" alt="OUTDOOR PRODUCTS" loading="lazy"></li>
+      <li><img src="img/clients/bcave.png" alt="B.CAVE" loading="lazy"></li>
+      <li><img src="img/clients/lee.png" alt="Lee" loading="lazy"></li>
+      <li><img src="img/clients/wrangler.png" alt="Wrangler" loading="lazy"></li>
+      <li><img src="img/clients/wacky-willy.png" alt="Wacky Willy" loading="lazy"></li>
+      <li><img src="img/clients/mlb.png" alt="MLB" loading="lazy"></li>
+      <li><img src="img/clients/nba.png" alt="NBA" class="tall" loading="lazy"></li>
+      <li><img src="img/clients/lf.png" alt="LF" loading="lazy"></li>
+      <li><img src="img/clients/vivien.png" alt="VIVIEN" loading="lazy"></li>
+      <li><img src="img/clients/ssangbangwool.png" alt="(주)쌍방울" loading="lazy"></li>
     </ul>
   </div>
 </section>
@@ -346,13 +418,13 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
 <section id="about" class="vision">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Vision</p><h2>약속한 품질을, 약속한 날에.</h2></div>
-      <p>부림어패럴은 현재에 안주하지 않고 진보된 기술력으로 고객을 만족시키기 위해 노력합니다. 기술력과 품질만큼은 높은 자부심을 가지고, 더 큰 고객 만족을 위해 신기술 개발을 이어 가겠습니다.</p>
+      <div><p class="eyebrow">Our Promise</p><h2>고객 만족을 위한<br>세 가지 약속</h2></div>
+      <p>부림어패럴은 높은 퀄리티, 전문적인 관리, 신소재·신기술 개발을 통해 고객 만족에 최선을 다할 것을 약속합니다.</p>
     </div>
     <div class="pillars">
-      <div class="pillar p1"><span class="eyebrow">Best Quality</span><h3>최고의 품질</h3><p>제품 분야별로 퀄리티를 높이기 위해 공정마다 검사하고 기록합니다.</p></div>
-      <div class="pillar p2"><span class="eyebrow">Professional Management</span><h3>전문적인 관리</h3><p>영업, 경영지원, 샘플 라인이 한 팀으로 움직여 주문을 끝까지 책임집니다.</p></div>
-      <div class="pillar p3"><span class="eyebrow">New Material &amp; Tech</span><h3>신소재·신기술 개발</h3><p>새로운 소재와 생산 기술을 꾸준히 연구해 더 다양한 의류를 만듭니다.</p></div>
+      <div class="pillar p1"><span class="no">1</span><span class="eyebrow">Best Quality</span><h3>높은 퀄리티</h3><p>원단 검사부터 최종 검품까지 공정마다 품질을 확인하고 기록합니다.</p></div>
+      <div class="pillar p2"><span class="no">2</span><span class="eyebrow">Professional Management</span><h3>전문적인 관리</h3><p>국내 본사가 해외 사업장의 생산 일정과 품질을 직접 관리해 납기를 지킵니다.</p></div>
+      <div class="pillar p3"><span class="no">3</span><span class="eyebrow">New Material &amp; Technology</span><h3>신소재·신기술 개발</h3><p>새로운 소재와 생산 기술을 꾸준히 연구해 더 다양한 의류를 만듭니다.</p></div>
     </div>
   </div>
 </section>
@@ -392,7 +464,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
         <div><dt>대표이사</dt><dd>오규호</dd></div>
         <div><dt>창립</dt><dd>2003년 1월 (법인 전환 2007년 10월)</dd></div>
         <div><dt>사업분야</dt><dd>의류 제조 · 프로모션</dd></div>
-        <div class="wide"><dt>주소</dt><dd>경기도 남양주시 다산순환로 20, 현대프리미어캠퍼스 B동 536호·1007호·1008호</dd></div>
+        <div class="wide"><dt>주소</dt><dd><a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EB%82%A8%EC%96%91%EC%A3%BC%EC%8B%9C%20%EB%8B%A4%EC%82%B0%EC%88%9C%ED%99%98%EB%A1%9C%2020" target="_blank" rel="noopener">경기도 남양주시 다산순환로 20, 현대프리미어캠퍼스 B동 536호·1007호·1008호</a><a class="maplink" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EB%82%A8%EC%96%91%EC%A3%BC%EC%8B%9C%20%EB%8B%A4%EC%82%B0%EC%88%9C%ED%99%98%EB%A1%9C%2020" target="_blank" rel="noopener">네이버 지도</a></dd></div>
         <div><dt>전화</dt><dd>031-553-5772~4</dd></div>
         <div><dt>팩스</dt><dd>031-563-7801</dd></div>
         <div><dt>이메일</dt><dd>oh9595@naver.com</dd></div>
