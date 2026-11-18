@@ -276,6 +276,8 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
 .netmap .hub{fill:var(--ink)}
 .netmap .hubt{fill:var(--bg);font-weight:800}
 .netmap .spoke{stroke:var(--line);stroke-width:3}
+.netmap .swap{stroke:var(--muted);stroke-width:2;stroke-dasharray:6 6;fill:none}
+.netmap .arrow{fill:var(--muted)}
 .netmap .n-cn{fill:var(--coral-p);stroke:var(--coral);stroke-width:3}
 .netmap .n-vn{fill:var(--lime-p);stroke:var(--lime);stroke-width:3}
 .netmap .n-bd{fill:var(--sky-p);stroke:var(--sky);stroke-width:3}
@@ -410,10 +412,14 @@ a.fig:hover{transform:translateY(-2px)}
     </div>
     <div class="net">
       <div>
-        <svg class="netmap" viewBox="0 0 440 330" role="img" aria-label="한국 본사가 중국, 베트남, 방글라데시 생산 거점을 함께 관리하는 구조">
+        <svg class="netmap" viewBox="0 0 440 330" role="img" aria-label="한국 본사가 중국, 베트남, 방글라데시 생산 거점을 함께 관리하고, 거점끼리 물량을 서로 넘길 수 있는 구조">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0 0L10 5L0 10z"/></marker></defs>
           <line class="spoke" x1="220" y1="170" x2="220" y2="62"/>
           <line class="spoke" x1="220" y1="170" x2="360" y2="262"/>
           <line class="spoke" x1="220" y1="170" x2="80" y2="262"/>
+          <path class="swap" d="M264 50 Q392 92 396 214" marker-start="url(#ah)" marker-end="url(#ah)"/>
+          <path class="swap" d="M176 50 Q48 92 44 214" marker-start="url(#ah)" marker-end="url(#ah)"/>
+          <path class="swap" d="M120 296 Q220 336 320 296" marker-start="url(#ah)" marker-end="url(#ah)"/>
           <circle class="hub" cx="220" cy="170" r="56"/>
           <text class="hubt" x="220" y="166" text-anchor="middle" font-size="17">부림어패럴</text>
           <text class="hubt" x="220" y="188" text-anchor="middle" font-size="13" style="font-weight:500">본사 · 품질 관리</text>
@@ -723,7 +729,7 @@ a.fig:hover{transform:translateY(-2px)}
   };
   var ATTR = {
     'BOOLIM APPAREL (주)부림어패럴': 'BOOLIM APPAREL', '주요 메뉴': 'Main menu', '고객 만족을 위한 세 가지 약속': 'Three promises to our clients',
-    '부림어패럴 숫자로 보기': 'BOOLIM APPAREL in numbers', '한국 본사가 중국, 베트남, 방글라데시 생산 거점을 함께 관리하는 구조': 'The Korean head office manages production sites in China, Vietnam and Bangladesh',
+    '부림어패럴 숫자로 보기': 'BOOLIM APPAREL in numbers', '한국 본사가 중국, 베트남, 방글라데시 생산 거점을 함께 관리하고, 거점끼리 물량을 서로 넘길 수 있는 구조': 'The Korean head office manages production sites in China, Vietnam and Bangladesh, and orders can be moved between sites',
     '(주)쌍방울': 'Ssangbangwool', '부림어패럴 위치 (구글 지도)': 'BOOLIM APPAREL location (Google Maps)', '예: 브랜드명': 'e.g. brand name', '성함': 'Your name', '선택 입력': 'Optional', '예: 1,000 장': 'e.g. 1,000 pcs',
     '원단, 희망 납기 등': 'Fabric, target delivery date, etc.', '회사 정보': 'Company information', '언어 선택': 'Language'
   };
