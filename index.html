@@ -1,10 +1,15 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="납기는 지키고 품질은 증명합니다. 패션 브랜드 생산 파트너, (주)부림어패럴">
 <title>부림어패럴</title>
+<script>
+/* 테마·언어: 기본은 밝은 모드 + 한글. 방문자가 고른 값만 이 브라우저에 기억 */
+(function(){var d=document.documentElement,t,l;try{t=localStorage.getItem('boolim-theme');l=localStorage.getItem('boolim-lang')}catch(e){}
+d.setAttribute('data-theme',t==='dark'?'dark':'light');if(l==='en')d.setAttribute('data-lang-pending','en')})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
@@ -57,6 +62,18 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 nav{display:flex;gap:6px;font-size:15px;font-weight:500}
 nav a{text-decoration:none;padding:6px 12px;border-radius:999px}
 nav a:hover{background:#e3f1fb}
+/* 헤더 오른쪽: 테마·언어 전환 (헤더는 항상 흰 바탕이라 색 고정) */
+.tools{display:flex;align-items:center;gap:8px;flex:none}
+.seg{display:inline-flex;border:1.5px solid #e4e8ef;border-radius:999px;padding:2px;background:#fff}
+.seg button{font:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;color:#6b7385;background:none;border:0;border-radius:999px;padding:5px 10px;cursor:pointer;line-height:1}
+.seg button[aria-pressed="true"]{background:#2b3140;color:#fff}
+.iconbtn{display:grid;place-items:center;width:36px;height:36px;border:1.5px solid #e4e8ef;border-radius:50%;background:#fff;color:#2b3140;cursor:pointer;padding:0}
+.iconbtn svg{width:18px;height:18px}
+.iconbtn .sun{display:none}
+:root[data-theme="dark"] .iconbtn .sun{display:block}
+:root[data-theme="dark"] .iconbtn .moon{display:none}
+.seg button:focus-visible,.iconbtn:focus-visible{outline:2px solid #46a2e1;outline-offset:2px}
+@media (max-width:900px){header.top .wrap{gap:10px}}
 
 /* 히어로 */
 .hero{background:linear-gradient(120deg,var(--sky-p) 0%,var(--lime-p) 38%,var(--butter-p) 68%,var(--coral-p) 100%)}
@@ -68,6 +85,8 @@ nav a:hover{background:#e3f1fb}
 .hero .msg .line,.hero .msg .sub{display:block;white-space:nowrap}
 .hero .msg .line{font-size:min(64px,7.4cqi)}
 .hero .msg .sub{margin-top:.5em;font-size:min(30px,6.2cqi);font-weight:700;color:var(--ink)}
+html[lang="en"] .hero .msg .line{font-size:min(56px,5.6cqi)}
+html[lang="en"] .hero .msg .sub{font-size:min(28px,5.2cqi)}
 .hero h1 .hl{background:linear-gradient(transparent 62%,var(--butter-p) 62%);padding:0 .08em}
 .hero p.lead{margin-top:22px;max-width:34em;font-size:17px;color:var(--muted)}
 .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
@@ -308,6 +327,16 @@ a.fig:hover{transform:translateY(-2px)}
       <a href="#contact">생산문의</a>
       <a href="#company">회사정보</a>
     </nav>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="언어 선택">
+        <button type="button" data-lang="ko" aria-pressed="true">KO</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="iconbtn" id="themeBtn" aria-label="어두운 모드로 바꾸기">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -315,7 +344,7 @@ a.fig:hover{transform:translateY(-2px)}
   <div class="wrap">
     <div class="msg">
       <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
-      <h1><span class="line"><span class="hl">납기</span>는 지키고 <span class="hl">품질</span>은 증명합니다.</span><span class="sub">패션 브랜드 생산 파트너, 부림어패럴</span></h1>
+      <h1><span class="line" data-en="&lt;span class=&quot;hl&quot;&gt;Delivery&lt;/span&gt; we keep. &lt;span class=&quot;hl&quot;&gt;Quality&lt;/span&gt; we prove."><span class="hl">납기</span>는 지키고 <span class="hl">품질</span>은 증명합니다.</span><span class="sub">패션 브랜드 생산 파트너, 부림어패럴</span></h1>
       <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 생산 거점을 글로벌하게 다각화하여 어떤 상황에서도 약속한 납기를 지킵니다.</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
@@ -564,16 +593,17 @@ a.fig:hover{transform:translateY(-2px)}
   var btn = document.getElementById('f-submit');
   var ENDPOINT = 'https://formsubmit.co/ajax/oh9595@naver.com';
   var v = function (id) { return document.getElementById(id).value.trim(); };
+  var T = function (ko, en) { return document.documentElement.lang === 'en' ? en : ko; };
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (v('f-honey')) return; // 스팸 봇
     var company = v('f-company'), name = v('f-name'), email = v('f-email');
-    if (!company || !name || !email) { msg.textContent = '회사·브랜드명, 담당자, 회신 이메일을 입력해 주세요.'; return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = '회신 이메일 주소 형식을 확인해 주세요.'; return; }
-    if (!v('f-msg')) { msg.textContent = '문의 내용을 입력해 주세요.'; return; }
+    if (!company || !name || !email) { msg.textContent = T('회사·브랜드명, 담당자, 회신 이메일을 입력해 주세요.', 'Please enter your company/brand, contact person and reply email.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = T('회신 이메일 주소 형식을 확인해 주세요.', 'Please check the reply email address.'); return; }
+    if (!v('f-msg')) { msg.textContent = T('문의 내용을 입력해 주세요.', 'Please enter your message.'); return; }
 
-    btn.disabled = true; btn.textContent = '보내는 중…'; msg.textContent = '';
+    btn.disabled = true; btn.textContent = T('보내는 중…', 'Sending…'); msg.textContent = '';
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -593,14 +623,150 @@ a.fig:hover{transform:translateY(-2px)}
     }).then(function (r) { return r.json().then(function (d) { if (!r.ok || String(d.success) !== 'true') throw new Error(d.message || r.status); }); })
       .then(function () {
         form.reset();
-        msg.textContent = '문의가 접수되었습니다. 담당자가 확인 후 회신 이메일로 연락드리겠습니다.';
+        msg.textContent = T('문의가 접수되었습니다. 담당자가 확인 후 회신 이메일로 연락드리겠습니다.', 'Thank you. We have received your inquiry and will reply by email.');
       })
       .catch(function () {
-        msg.textContent = '전송하지 못했습니다. 잠시 후 다시 시도하시거나 oh9595@naver.com, 031-553-5772로 연락해 주세요.';
+        msg.textContent = T('전송하지 못했습니다. 잠시 후 다시 시도하시거나 oh9595@naver.com, 031-553-5772로 연락해 주세요.', 'Sending failed. Please try again later or contact oh9595@naver.com / +82-31-553-5772.');
       })
-      .finally(function () { btn.disabled = false; btn.textContent = '문의 보내기'; });
+      .finally(function () { btn.disabled = false; btn.textContent = T('문의 보내기', 'Send inquiry'); });
   });
 })();
+</script>
+<script>
+// 밝은/어두운 모드, 한글/영문 전환 (기본: 밝은 모드 + 한글)
+(function () {
+  var root = document.documentElement;
+  var save = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
+
+  // ── 테마
+  var themeBtn = document.getElementById('themeBtn');
+  function themeLabel() {
+    var dark = root.getAttribute('data-theme') === 'dark', en = root.lang === 'en';
+    themeBtn.setAttribute('aria-label', dark ? (en ? 'Switch to light mode' : '밝은 모드로 바꾸기') : (en ? 'Switch to dark mode' : '어두운 모드로 바꾸기'));
+    themeBtn.title = themeBtn.getAttribute('aria-label');
+  }
+  themeBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next); save('boolim-theme', next); themeLabel();
+  });
+
+  // ── 언어: 한글 글자 조각 → 영문 (회사·브랜드 고유명은 영문 표기가 확인된 것만 바꿈)
+  var EN = {
+    '사업영역': 'Business', '생산거점': 'Production', '생산공정': 'Process', '고객사': 'Clients', '회사연혁': 'History', '생산문의': 'Contact', '회사정보': 'Company',
+    '패션 브랜드 생산 파트너, 부림어패럴': 'Production partner for fashion brands',
+    '부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 생산 거점을 글로벌하게 다각화하여 어떤 상황에서도 약속한 납기를 지킵니다.':
+      'BOOLIM APPAREL is an apparel promotion company that manufactures clothing for a wide range of fashion brands. Since 2003 we have made sports, casual, outdoor and denim apparel from sample to delivery, and with globally diversified production sites we meet the promised delivery date in any situation.',
+    '생산 문의하기': 'Request production', '회사 연혁 보기': 'View our history',
+    '(주)부림어패럴': 'BOOLIM APPAREL Co., Ltd.',
+    '고객 만족을 위한 세 가지 약속': 'Three promises to our clients',
+    '높은 퀄리티': 'High quality', '전문적인 관리': 'Expert management', '신소재·신기술 개발': 'New materials & technology',
+    '23년': '23 yrs', '의류 생산 경력': 'in apparel production', '2003년 창립': 'Founded in 2003',
+    '3개국': '3 countries', '생산 거점': 'production sites', '중국·베트남·방글라데시': 'China · Vietnam · Bangladesh',
+    '10단계': '10 steps', '품질 관리': 'quality control', '원단 검사부터 선적까지': 'From fabric inspection to shipment',
+    '14개+': '14+', '함께한 브랜드': 'partner brands', '스포츠·캐주얼·데님·아웃도어': 'Sports · casual · denim · outdoor',
+    '브랜드가 디자인에 집중할 수 있도록, 샘플 개발과 원단 수배부터 봉제·검품·납품까지 생산의 전 과정을 맡습니다.':
+      'So brands can focus on design, we handle the whole production process, from sample development and fabric sourcing to sewing, inspection and delivery.',
+    '의류 제작·생산': 'Apparel manufacturing',
+    '브랜드의 작업지시서를 받아 원단·부자재 수배부터 재단·봉제·완성까지 생산을 진행합니다.': 'Working from the brand’s tech pack, we run production from sourcing fabrics and trims to cutting, sewing and finishing.',
+    '티셔츠·맨투맨·후디 등 니트류': 'Knits: T-shirts, sweatshirts, hoodies', '다운·패딩·바람막이 등 우븐 아우터': 'Woven outerwear: down, padded jackets, windbreakers', '팬츠·조거·스포츠웨어': 'Pants, joggers, sportswear',
+    '샘플 개발': 'Sample development',
+    '자체 샘플 라인에서 패턴과 샘플을 만들고, 브랜드 컨펌을 거쳐 본생산으로 이어 갑니다.': 'Our in-house sample line makes patterns and samples, then moves to bulk production after the brand’s approval.',
+    '패턴·샘플 제작': 'Pattern & sample making', '원단·부자재 물성 테스트': 'Fabric & trim property tests', '소재 변경·수정 샘플 대응': 'Revised samples for material changes',
+    '품질·납기 관리': 'Quality & delivery control',
+    '원단 검사부터 출고 전 최종 검품까지 단계마다 품질을 확인하고, 여러 생산 거점의 일정을 직접 관리해 약속한 날짜에 납품합니다.': 'We check quality at every stage, from fabric inspection to final pre-shipment inspection, and manage every site’s schedule ourselves to deliver on the promised date.',
+    '원단 검사·수축률 테스트': 'Fabric inspection & shrinkage tests', '인라인·엔드라인 검사, 바늘 검침': 'Inline & end-line checks, needle detection', 'AQL 기준 최종 검품': 'Final inspection to AQL standards',
+    '생산 거점을 다각화하여': 'Diversified production sites', '납기 준수를 안정화했습니다': 'for reliable on-time delivery',
+    '생산 거점을 중국, 베트남, 방글라데시 등 글로벌하게 다각화했습니다. 하나의 생산지에 문제가 생겨도 약속한 납기에 차질이 없도록 합니다.': 'Our production is diversified globally across China, Vietnam, Bangladesh and more, so a problem at one site does not delay the delivery we promised.',
+    '부림어패럴': 'BOOLIM', '본사 · 품질 관리': 'HQ · Quality control', '중국': 'China', '베트남': 'Vietnam', '방글라데시': 'Bangladesh',
+    '점선 화살표: 거점 사이 물량 전환': 'Dashed arrows: orders moved between sites',
+    '웨이하이 · 옌타이 / 2개 사업장': 'Weihai · Yantai / 2 sites', '연 133만 장+': '1.33M+ pcs / year', '샘플실 운영': 'Sample room',
+    '호치민 / 2개 공장': 'Ho Chi Minh City / 2 factories', '18개 라인': '18 lines', '월 50만 장': '500K pcs / month',
+    '니트 · 우븐 10개 라인': '10 knit & woven lines', '인력 910명': '910 workers', '2026년 말 증설': 'Expanding end of 2026',
+    '원단 생산처': 'Fabric sourcing', '원단도 중국·베트남·국내로 나눠 공급받아, 원부자재 수급이 한 곳에 묶이지 않게 관리합니다.': 'Fabrics also come from China, Vietnam and Korea, so our material supply never depends on a single place.',
+    '생산 절차': 'Production process',
+    '원부자재 입고부터 출고까지 3공정으로 나누고, 10단계 품질 검사로 수량과 품질을 확인해 기록합니다.': 'From materials in to shipment out, production runs in 3 processes, and a 10-step quality inspection checks and records quantity and quality.',
+    '원부자재 입고': 'Materials in', '송장 · 입고 수량 기록': 'Invoice · received qty logged',
+    '1공정 · 재단 준비': 'Process 1 · Cutting prep', '원부자재 검사': 'Material inspection', '원단 테스트 · 부자재 전수 검사': 'Fabric tests · 100% trim check',
+    '재단': 'Cutting', '24시간 휴지 후 재단 · 재단물 검사': 'Cut after 24h relaxing · cut-panel check', '자수 · 프린트': 'Embroidery · print', '필요 시 · 불량 기록': 'If needed · defects logged',
+    '준비 완료': 'Ready', '사이즈 · 컬러별 수량 정리': 'Qty by size & color',
+    '2공정 · 봉제': 'Process 2 · Sewing', '인라인': 'Inline', '라인 투입 수량 기록': 'Line input qty logged', '엔드라인': 'End-line', '완성 수량 기록': 'Finished qty logged', '검사': 'Inspection', '불량 · 수선 기록': 'Defects · repairs logged',
+    '생산 완료': 'Production done', '미완성 · 손실 수량 기록': 'Unfinished · loss qty logged',
+    '3공정 · 마무리': 'Process 3 · Finishing', '세탁': 'Washing', '다림질': 'Pressing', 'QA 검사': 'QA inspection', '폴딩': 'Folding', '바늘 검침': 'Needle detection', '포장': 'Packing',
+    '출고': 'Shipment', '출고 · 생산재고 보고 · 선적': 'Dispatch · stock report · shipping',
+    '단계마다 남긴 기록으로 주문별 수량, 불량, 납기를 추적합니다.': 'Records kept at every step let us track quantity, defects and delivery for each order.',
+    '단계 품질 관리': '-step quality control',
+    '공정마다 검사 항목을 정해 두고, 출고 전에는 AQL 기준으로 두 번 최종 검사합니다.': 'Each process has set checkpoints, and before shipment we run two final inspections to AQL standards.',
+    '원단 · 부자재 검사': 'Fabric & trim inspection', '4점 검사법 · 수축률 · 중량 · 색상 차이': '4-point system · shrinkage · weight · shade',
+    '샘플 QC': 'Sample QC', '오더 패키지 · 샘플 자재 · 패턴 · 치수': 'Order package · materials · pattern · measurements',
+    '재단 QC': 'Cutting QC', '마카 · 연단 확인 · 재단물 검사': 'Marker · spreading · cut-panel check',
+    '공정 중 QC': 'In-process QC', '공정별 검사 · 실 장력 · 지퍼 부착': 'Per-operation checks · thread tension · zippers',
+    '순회 QC': 'Roving QC', '바늘 · 땀수(SPI) · 스티치 점검': 'Needles · stitches per inch (SPI) · stitching',
+    '엔드라인 QC': 'End-line QC', '외관 · 치수 검사': 'Appearance · measurements',
+    '마무리 QC': 'Finishing QC', '다림질 · 치수 측정 · SKU 확인': 'Pressing · measurements · SKU check',
+    '사전 최종 검사': 'Pre-final inspection', 'AQL 기준 판정': 'AQL-based judgment', '최종 검사': 'Final inspection',
+    '선적 관리': 'Shipment control', '수량 · 포장 확인 · 선적': 'Quantity · packing check · shipping',
+    '주요 고객사': 'Key clients', '부림어패럴과 함께하고 있는 국내 패션 기업과 브랜드입니다.': 'Korean fashion companies and brands we work with.',
+    '회사 연혁': 'History', '2003년 창립해 2007년 법인으로 전환했고, 국내 주요 패션 브랜드와 협력하며 성장해 왔습니다.': 'Founded in 2003 and incorporated in 2007, we have grown together with leading Korean fashion brands.',
+    '부림 창립': 'Boolim founded', '네티션닷컴(A6, ENC) 의류 생산': 'Apparel production for A6, ENC',
+    '리얼컴퍼니(ASK, DOHC) 의류 생산': 'Apparel production for ASK, DOHC', '(주)부림어패럴 법인 전환': 'Incorporated as BOOLIM APPAREL Co., Ltd.',
+    'F&F(SISLEY, MLB, MLB KIDS) 의류 생산': 'Apparel production for F&F (SISLEY, MLB, MLB KIDS)',
+    '엠케이트렌드(NBA)': 'NBA', '제이엔지인터내셔날(JEEP, SIERO)': 'JEEP, SIERO',
+    '본사 사옥 신축 (구리)': 'New head office built (Guri)', '신세계인터내셔날': 'Shinsegae International', '하이드어웨이(LIFE WORK)': 'LIFE WORK',
+    '비케이브(LEE, WRANGLER)': 'B.CAVE (LEE, WRANGLER)', '원더플레이스(OUTDOOR PRODUCTS)': 'WONDERPLACE (OUTDOOR PRODUCTS)',
+    '사옥 이전 (남양주 현대프리미어캠퍼스)': 'Head office moved (Hyundai Premier Campus, Namyangju)', '브랜드유니버스(SPYDER) 외': 'SPYDER and more',
+    '생산 문의': 'Production inquiry',
+    '디자인 시안이나 작업지시서, 예상 수량과 납기를 알려주시면 담당자가 검토 후 견적과 일정을 회신드립니다. 문의는 회사 메일로 바로 전달됩니다.': 'Send us your design or tech pack with the expected quantity and delivery date. Our team will review it and reply with a quote and schedule. Inquiries go straight to our company email.',
+    '회사·브랜드명': 'Company / brand', '담당자': 'Contact person', '회신 이메일': 'Reply email', '연락처': 'Phone', '품목': 'Item',
+    '티셔츠·맨투맨·후디': 'T-shirts · sweatshirts · hoodies', '아우터·점퍼': 'Outerwear · jackets', '팬츠·스커트': 'Pants · skirts', '원피스·블라우스': 'Dresses · blouses', '기타': 'Other',
+    '예상 수량': 'Expected quantity', '문의 내용': 'Message', '문의 보내기': 'Send inquiry',
+    '상호': 'Company', '대표이사': 'CEO', '창립': 'Founded', '2003년 1월 (법인 전환 2007년 10월)': 'January 2003 (incorporated October 2007)',
+    '사업분야': 'Business', '의류 제조 · 프로모션': 'Apparel manufacturing · promotion', '주소': 'Address',
+    '경기도 남양주시 다산순환로 20, 현대프리미어캠퍼스 B동 536호·1007호·1008호': 'B-536, 1007, 1008, Hyundai Premier Campus, 20 Dasansunhwan-ro, Namyangju-si, Gyeonggi-do, Korea',
+    '네이버 지도': 'Naver Map', '전화': 'Tel', '팩스': 'Fax', '이메일': 'Email'
+  };
+  var ATTR = {
+    'BOOLIM APPAREL (주)부림어패럴': 'BOOLIM APPAREL', '주요 메뉴': 'Main menu', '고객 만족을 위한 세 가지 약속': 'Three promises to our clients',
+    '부림어패럴 숫자로 보기': 'BOOLIM APPAREL in numbers', '한국 본사가 중국, 베트남, 방글라데시 생산 거점을 함께 관리하고, 거점끼리 물량을 서로 넘길 수 있는 구조': 'The Korean head office manages production sites in China, Vietnam and Bangladesh, and orders can be moved between sites',
+    '(주)쌍방울': 'Ssangbangwool', '예: 브랜드명': 'e.g. brand name', '성함': 'Your name', '선택 입력': 'Optional', '예: 1,000 장': 'e.g. 1,000 pcs',
+    '원단, 희망 납기 등': 'Fabric, target delivery date, etc.', '회사 정보': 'Company information', '언어 선택': 'Language'
+  };
+
+  var texts = null, attrs = null, htmls = null;
+  function collect() {
+    texts = []; attrs = []; htmls = [];
+    document.querySelectorAll('[data-en]').forEach(function (el) { htmls.push([el, el.innerHTML]); });
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) {
+      if (n.parentElement.closest('script,style,[data-en]')) continue;
+      var k = n.nodeValue.trim();
+      if (k && Object.prototype.hasOwnProperty.call(EN, k)) texts.push([n, n.nodeValue, n.nodeValue.replace(k, EN[k])]);
+    }
+    document.querySelectorAll('[placeholder],[aria-label],[alt]').forEach(function (el) {
+      ['placeholder', 'aria-label', 'alt'].forEach(function (a) {
+        var v = el.getAttribute(a);
+        if (v && ATTR[v]) attrs.push([el, a, v, ATTR[v]]);
+      });
+    });
+  }
+  function setLang(lang, remember) {
+    if (!texts) collect();
+    var en = lang === 'en';
+    htmls.forEach(function (h) { h[0].innerHTML = en ? h[0].getAttribute('data-en') : h[1]; });
+    texts.forEach(function (t) { t[0].nodeValue = en ? t[2] : t[1]; });
+    attrs.forEach(function (a) { a[0].setAttribute(a[1], en ? a[3] : a[2]); });
+    root.lang = en ? 'en' : 'ko';
+    document.title = en ? 'BOOLIM APPAREL' : '부림어패럴';
+    document.querySelectorAll('.seg button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    themeLabel();
+    if (remember) save('boolim-lang', lang);
+  }
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); });
+  });
+  if (root.getAttribute('data-lang-pending') === 'en') { root.removeAttribute('data-lang-pending'); setLang('en', false); }
+  themeLabel();
+})();
+
 </script>
 </body>
 </html>
