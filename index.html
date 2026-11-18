@@ -60,16 +60,16 @@ nav a:hover{background:#e3f1fb}
 
 /* 히어로 */
 .hero{background:linear-gradient(120deg,var(--sky-p) 0%,var(--lime-p) 38%,var(--butter-p) 68%,var(--coral-p) 100%)}
-.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px 48px;align-items:start}
+.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px 48px;align-items:center}
 .hero .eyebrow{color:var(--sky)}
 .hero h1{font-weight:800;margin-top:16px}
-/* 거버닝 메시지: 화면 전체 폭 한 줄. 칸 폭(cqi)에 맞춰 글씨가 줄어들어 어떤 화면에서도 줄이 나뉘지 않음 */
-.hero .msg{grid-column:1/-1;container-type:inline-size;min-width:0}
+/* 거버닝 메시지: 왼쪽 칸 안에서 한 줄. 칸 폭(cqi)에 맞춰 글씨가 줄어들어 오른쪽 카드가 밀려나지 않고 줄도 나뉘지 않음 */
+.hero .msg{container-type:inline-size;min-width:0}
 .hero .msg .line,.hero .msg .sub{display:block;white-space:nowrap}
 .hero .msg .line{font-size:min(64px,7.4cqi)}
-.hero .msg .sub{margin-top:.5em;font-size:min(36px,6.2cqi);font-weight:700;color:var(--ink)}
+.hero .msg .sub{margin-top:.5em;font-size:min(30px,6.2cqi);font-weight:700;color:var(--ink)}
 .hero h1 .hl{background:linear-gradient(transparent 62%,var(--butter-p) 62%);padding:0 .08em}
-.hero p.lead{margin-top:0;max-width:34em;font-size:17px;color:var(--muted)}
+.hero p.lead{margin-top:22px;max-width:34em;font-size:17px;color:var(--muted)}
 .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
 .btn.solid{background:var(--ink);color:var(--bg)}
@@ -316,8 +316,6 @@ a.fig:hover{transform:translateY(-2px)}
     <div class="msg">
       <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
       <h1><span class="line"><span class="hl">납기</span>는 지키고 <span class="hl">품질</span>은 증명합니다.</span><span class="sub">패션 브랜드 생산 파트너, 부림어패럴</span></h1>
-    </div>
-    <div>
       <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 중국·베트남·방글라데시로 생산 거점을 다각화하여 어떤 상황에서도 약속한 납기를 지킵니다.</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
