@@ -84,7 +84,8 @@ nav a:hover{background:#e3f1fb}
 .spool.s4{background:var(--coral-p);--c:var(--coral)}
 
 /* 숫자 카드: 거버닝 메시지 바로 아래 (메시지의 근거) */
-.hero .sub{margin-top:18px;font-size:clamp(17px,1.8vw,21px);font-weight:700;color:var(--muted)}
+/* 거버닝 메시지 둘째 줄: 첫 줄보다 조금 작지만 같은 큰 제목 글씨 */
+.hero h1 .sub{display:block;margin-top:14px;font-size:.62em;font-weight:800;color:var(--sky)}
 .figures{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .fig{background:var(--surface);border-radius:20px;padding:20px 22px 18px;border-top:4px solid var(--c);box-shadow:0 12px 30px -24px rgba(43,49,64,.45);min-width:0}
 .fig b{display:block;font-size:clamp(28px,3.2vw,40px);font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.03em;color:var(--c)}
@@ -297,8 +298,8 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   <div class="wrap">
     <div>
       <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
-      <h1><span class="hl">납기</span>는 지키고<br><span class="hl">품질</span>은 증명합니다.</h1>
-      <p class="sub">패션 브랜드 생산 파트너, 부림어패럴</p>
+      <h1><span class="hl">납기</span>는 지키고<br><span class="hl">품질</span>은 증명합니다.<span class="sub">패션 브랜드 생산 파트너, 부림어패럴</span></h1>
+      <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 중국·베트남·방글라데시로 생산 거점을 다각화해 어떤 상황에서도 약속한 납기를 지킵니다.</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
         <a class="btn ghost" href="#history">회사 연혁 보기</a>
