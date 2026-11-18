@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="(주)부림어패럴 - 의류 임가공·수출입 전문 기업">
+<meta name="description" content="납기는 지키고 품질은 증명합니다. 패션 브랜드 생산 파트너, (주)부림어패럴">
 <title>부림어패럴</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@ nav a:hover{background:#e3f1fb}
 
 /* 히어로 */
 .hero{background:linear-gradient(120deg,var(--sky-p) 0%,var(--lime-p) 38%,var(--butter-p) 68%,var(--coral-p) 100%)}
-.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px 48px;align-items:center}
 .hero .eyebrow{color:var(--sky)}
 .hero h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;margin-top:16px}
 .hero h1 .hl{background:linear-gradient(transparent 62%,var(--butter-p) 62%);padding:0 .08em}
@@ -83,15 +83,14 @@ nav a:hover{background:#e3f1fb}
 .spool.s3{background:var(--butter-p);--c:var(--butter)}
 .spool.s4{background:var(--coral-p);--c:var(--coral)}
 
-/* 숫자 */
-.figures .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-block:28px}
-.fig{border-radius:20px;padding:22px 22px 18px}
-.fig b{display:block;font-size:clamp(26px,3vw,36px);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-.fig small{color:var(--muted);font-size:14px}
-.fig:nth-child(1){background:var(--sky-p)}.fig:nth-child(1) b{color:var(--sky)}
-.fig:nth-child(2){background:var(--lime-p)}.fig:nth-child(2) b{color:var(--lime)}
-.fig:nth-child(3){background:var(--butter-p)}.fig:nth-child(3) b{color:var(--butter)}
-.fig:nth-child(4){background:var(--coral-p)}.fig:nth-child(4) b{color:var(--coral)}
+/* 숫자 카드: 거버닝 메시지 바로 아래 (메시지의 근거) */
+.hero .sub{margin-top:18px;font-size:clamp(17px,1.8vw,21px);font-weight:700;color:var(--muted)}
+.figures{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.fig{background:var(--surface);border-radius:20px;padding:20px 22px 18px;border-top:4px solid var(--c);box-shadow:0 12px 30px -24px rgba(43,49,64,.45);min-width:0}
+.fig b{display:block;font-size:clamp(28px,3.2vw,40px);font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.03em;color:var(--c)}
+.fig span{display:block;margin-top:6px;font-size:15px;font-weight:700}
+.fig small{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+.fig:nth-child(1){--c:var(--sky)}.fig:nth-child(2){--c:var(--lime)}.fig:nth-child(3){--c:var(--butter)}.fig:nth-child(4){--c:var(--coral)}
 
 section{padding-block:80px}
 .sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:end;margin-bottom:40px}
@@ -216,7 +215,7 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
 @media (max-width:900px){
   .hero .wrap,.sec-head,.contact .wrap,footer .grid{grid-template-columns:1fr}
   .biz,.pillars{grid-template-columns:1fr}
-  .figures .wrap{grid-template-columns:repeat(2,1fr)}
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sites{grid-template-columns:1fr}
   .clients{grid-template-columns:repeat(4,minmax(0,1fr))}
   nav{display:none}
@@ -298,8 +297,8 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
   <div class="wrap">
     <div>
       <p class="eyebrow">Since 2003 · Apparel Promotion &amp; Manufacturing</p>
-      <h1>브랜드의 디자인을<br><span class="hl">한 벌의 옷</span>으로 완성합니다</h1>
-      <p class="lead">부림어패럴은 다양한 패션 브랜드의 의류를 제작·생산하는 의류 프로모션 기업입니다. 2003년 창립 이후 스포츠, 캐주얼, 아웃도어, 데님 브랜드의 옷을 샘플부터 납품까지 책임지고 만들어 왔으며, 중국·베트남·방글라데시로 생산 거점을 다각화해 어떤 상황에서도 약속한 납기를 지킵니다.</p>
+      <h1><span class="hl">납기</span>는 지키고<br><span class="hl">품질</span>은 증명합니다.</h1>
+      <p class="sub">패션 브랜드 생산 파트너, 부림어패럴</p>
       <div class="cta">
         <a class="btn solid" href="#contact">생산 문의하기</a>
         <a class="btn ghost" href="#history">회사 연혁 보기</a>
@@ -318,15 +317,12 @@ footer .copy{margin-top:36px;padding-top:18px;border-top:2px dashed var(--line);
         <div class="pm p3"><span class="no">3</span><div><b>신소재·신기술 개발</b><small>New Material &amp; Technology</small></div></div>
       </div>
     </aside>
-  </div>
-</div>
-
-<div class="figures">
-  <div class="wrap">
-    <div class="fig"><b>2003</b><small>부림 창립</small></div>
-    <div class="fig"><b>23년</b><small>의류 생산 경력</small></div>
-    <div class="fig"><b>3개국</b><small>생산 거점 다각화</small></div>
-    <div class="fig"><b>115억</b><small>2025년 매출액</small></div>
+    <div class="figures" aria-label="부림어패럴 숫자로 보기">
+      <div class="fig"><b>23년</b><span>의류 생산 경력</span><small>2003년 창립</small></div>
+      <div class="fig"><b>3개국</b><span>생산 거점</span><small>중국·베트남·방글라데시</small></div>
+      <div class="fig"><b>10단계</b><span>품질 관리</span><small>원단 검사부터 선적까지</small></div>
+      <div class="fig"><b>14개+</b><span>함께한 브랜드</span><small>스포츠·캐주얼·데님·아웃도어</small></div>
+    </div>
   </div>
 </div>
 
