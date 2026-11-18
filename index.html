@@ -162,11 +162,6 @@ section{padding-block:80px}
 /* 점 색의 의미: 진한 점 = 회사 이정표(창립·법인 전환·사옥), 연한 회색 점 = 고객사·브랜드 생산 */
 .timeline > li{--c:color-mix(in srgb,var(--muted) 45%,transparent)}
 .timeline > li.mile{--c:var(--ink)}
-.tl-legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0 0 14px;padding:0;list-style:none;font-size:13.5px;color:var(--muted)}
-.tl-legend li{display:flex;align-items:center;gap:8px}
-.tl-legend li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
-.tl-legend .l-mile{--c:var(--ink);color:var(--ink);font-weight:700}
-.tl-legend .l-client{--c:color-mix(in srgb,var(--muted) 45%,transparent)}
 .timeline ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;min-width:0}
 .timeline ul li + li::before{content:"·";margin:0 10px;color:var(--muted);font-weight:400}
 @media (min-width:621px){.timeline ul li{white-space:nowrap}}
@@ -499,7 +494,6 @@ a.fig:hover{transform:translateY(-2px)}
       <div><p class="eyebrow">History</p><h2>회사 연혁</h2></div>
       <p>2003년 창립해 2007년 법인으로 전환했고, 국내 주요 패션 브랜드와 협력하며 성장해 왔습니다.</p>
     </div>
-    <ul class="tl-legend" aria-label="점 색 안내"><li class="l-mile">회사 이정표</li><li class="l-client">고객사 · 브랜드 생산</li></ul>
     <ol class="timeline">
       <li class="mile"><span class="y">2003.01</span><ul><li class="key">부림 창립</li><li>네티션닷컴(A6, ENC) 의류 생산</li></ul></li>
       <li><span class="y">2004.03</span><ul><li>리얼컴퍼니(ASK, DOHC) 의류 생산</li></ul></li>
